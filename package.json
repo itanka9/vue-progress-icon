@@ -1,18 +1,24 @@
 {
   "name": "vuetify-progress-icon",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.2.0",
+  "homepage": "https://github.com/itanka9/vue-progress-icon",
+  "author": "Itanka 9 <itano@yandex.ru> (http://me.itanka9.now.sh)",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/itanka9/vue-progress-icon.git"
+  },
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name vue-progress-icon ./src/library.js",
     "build-demo": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
+  "main": "dist/vue-progress-icon.umd.min.js",
   "dependencies": {
     "core-js": "^2.6.5",
     "font-awesome": "^4.7.0",
-    "vue": "^2.6.10",
-    "vuetify": "^1.5.14"
+    "vue": "^2.6.10"
   },
   "devDependencies": {
     "@babel/plugin-proposal-export-default-from": "^7.2.0",
@@ -24,5 +30,6 @@
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
     "vue-template-compiler": "^2.5.21"
-  }
+  },
+  "license": "MIT"
 }

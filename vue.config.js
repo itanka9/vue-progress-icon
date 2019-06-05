@@ -1,3 +1,7 @@
 module.exports = {
-    publicPath: 'vue-progress-icon'
+    publicPath: 'vue-progress-icon',
+
+    configureWebpack: {
+        externals: [ 'vue' ]  
+    }
 } 

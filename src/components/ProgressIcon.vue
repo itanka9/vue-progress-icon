@@ -4,7 +4,7 @@
             <slot />
         </div>
         <div class="fg"
-             :style="{ clip: clipRect, color: color }"
+             :style="style"
         >
             <slot />
         </div>
@@ -28,13 +28,29 @@ export default {
             type: String,
             default: 'lightgreen'
         },
+        hoffset: {
+            type: Number,
+            default: 0
+        },
+        voffset: {
+            type: Number,
+            default: 0
+        },
         vscale: {
             type: Number,
-            default: 1.15
+            default: 1
+        },
+        hscale: {
+            type: Number,
+            default: 1
         },
         direction: {
             type: String,
             default: 'vertical'
+        },
+        debug: {
+            type: Boolean,
+            default: false
         }
     },
 
@@ -46,8 +62,13 @@ export default {
             }
             this.adjustRoot(measured)
             const { height, width } = measured
-            const scaledHeight = height * this.vscale
-            const gap = (scaledHeight - height) / 2 
+            const scaledHeight = height * this.vscale,
+                  scaledWidth = width * this.hscale
+
+            
+            const vgap = (height - scaledHeight) / 2,
+                  hgap = (width - scaledWidth) / 2;
+
 
             const dir = this.direction
             let progress = this.progress
@@ -55,9 +76,34 @@ export default {
                 const step = 100 / this.steps
                 progress = Math.ceil(progress / step) * step
             }
-            const top = dir === 'vertical' ? (scaledHeight - scaledHeight * progress / 100) : 0
-            const right = dir === 'horizontal' ? width * progress / 100 : width
-            return `rect(${top - gap}px,${right}px,${scaledHeight}px,0px)`
+
+            const hoffset = this.hoffset,
+                  voffset = this.voffset,
+                  vsize = dir === 'vertical' ? scaledHeight * progress / 100 : scaledHeight,
+                  hsize = dir === 'horizontal' ? scaledWidth * progress / 100 : scaledWidth;
+
+            return `rect(${scaledHeight - vsize + vgap + voffset}px,${hsize + hgap + hoffset}px,${scaledHeight + voffset + vgap}px,${hoffset + hgap}px)`
+        },
+
+        style () {
+            return { ...this.clipStyle, ...this.debugStyle }
+        },
+
+        clipStyle () {
+            return {
+                clip: this.clipRect,
+                'color': this.color
+            }
+        },
+
+        debugStyle () {
+            if (!this.debug) {
+                return {}
+            }
+            return {
+                'background-color': 'gray',
+                'background-opacity': '30%'
+            }
         }
     },
 

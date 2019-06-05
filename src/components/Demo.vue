@@ -1,45 +1,93 @@
 <template>
   <div class="demo">
-    <progress-icon
-      class="demo-medium"
-      :progress="progress4"
-      direction="horizontal"
-    >
-      <i class="fas fa-battery-full" />
-    </progress-icon>
-    <progress-icon
-      class="demo-big"
-      :progress="progress3"
-    >
-      <i class="fas fa-signature" />
-    </progress-icon>
-    <progress-icon
-      class="demo-small"
-      direction="horizontal"
-      :steps="5"
-      :progress="progress1"
-    >
-      <i class="fas fa-signal" />
-    </progress-icon>
+    <h1>Examples</h1>
+
+    <div class="container">
+      <p class="src">direction="horizontal" :hoffset="-2" :voffset="9" :vscale="0.3" :hscale="0.67"</p>
+      <progress-icon
+        class="demo-medium"
+        :progress="progress4"
+        direction="horizontal"
+        :hoffset="-2"
+        :voffset="9"
+        :vscale="0.3"
+        :hscale="0.67"
+      >
+        <i class="fas fa-battery-full" />
+      </progress-icon>
+    </div>
+
+    <div class="container">
+      <p class="src">direction="horizontal"</p>
+      <progress-icon
+        class="demo-medium"
+        :progress="progress4"
+        direction="horizontal"
+      >
+        <i class="fas fa-battery-full" />
+      </progress-icon>
+    </div>
+
+    <div class="container">
+      <p class="src">:vscale="0.8" :voffset="12"</p>
+      <progress-icon
+        class="demo-big"
+        :progress="progress3"
+        :vscale="0.8"
+        :voffset="12"
+      >
+        <i class="fas fa-signature" />
+      </progress-icon>
+    </div>
     <br />
+
+    <div class="container">
+      <p class="src">direction="horizontal" :steps="5"<br /> :voffset="6"</p>
+      <progress-icon
+        class="demo-small"
+        direction="horizontal"
+        :steps="5"
+        :progress="progress1"
+        :voffset="6"
+      >
+        <i class="fas fa-signal" />
+      </progress-icon>
+    </div>
+
+    <div class="container">
+      <p class="src">:voffset="12"<br /> :vscale="1.05"<br /> debug</p>
+      <progress-icon
+        class="demo-big"
+        color="red"
+        :progress="progress3"
+        :voffset="12"
+        :vscale="1.05"
+        debug
+      >
+        <i class="fas fa-bomb" />
+      </progress-icon>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
     <template v-for="i in [1,2,3,4,5]">
       <progress-icon
         :key="i"  
         :progress="progress2"
-        class="demo-small"
-        color="red"
+        class="demo-big"
+        color="yellow"
+        :voffset="8"
+        :vscale="1.1"
       >
         <i class="fas fa-biohazard" />
       </progress-icon>
     </template>
     <br />
-    <progress-icon
-      class="demo-big"
-      :color="`rgb(${colorVal(colorR)}, ${colorVal(colorG)}, ${colorVal(colorB)})`"
-      :progress="progress3"
-    >
-      <i class="fas fa-bomb" />
-    </progress-icon>
+    
   </div>
 </template>
 
@@ -88,6 +136,25 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+.container {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 8px;
+  margin: 8px;
+  border: solid 1px #eee;
+  border-radius: 3px;
+}
+
+.src {
+  font-size: 12px;
+  font-family: monospace;
+  width: 170px;
+  text-align: left;
+  color: #999;
+}
+
 .demo-small, .demo-medium, .demo-big {
   margin: 16px;
 }
