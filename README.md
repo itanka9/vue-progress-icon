@@ -7,7 +7,7 @@ Easy progress display with clipping overlay and material/fa icons.
 # Installation
 
 ```bash
-npm i vue-progress-icon
+npm i https://github.com/itanka9/vue-progress-icon.git
 ```
 
 # Usage 
