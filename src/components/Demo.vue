@@ -92,8 +92,7 @@
 </template>
 
 <script>
-import ProgressIcon from './ProgressIcon'
-import { setInterval } from 'timers';
+import ProgressIcon from './ProgressIcon.vue'
 
 export default {
   name: "demo",
