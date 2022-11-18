@@ -1,5 +1,6 @@
+(function(){"use strict";try{if(typeof document!="undefined"){var e=document.createElement("style");e.appendChild(document.createTextNode(".progress-icon[data-v-2b7d77c5]{position:relative;display:inline-block}.progress-icon .fg[data-v-2b7d77c5],.progress-icon .bg[data-v-2b7d77c5]{position:absolute;top:0;left:0}.progress-icon .fg[data-v-2b7d77c5]{z-index:2}.progress-icon .bg[data-v-2b7d77c5]{z-index:1}")),document.head.appendChild(e)}}catch(o){console.error("vite-plugin-css-injected-by-js",o)}})();
 var g = function() {
-  var t = this, n = t.$createElement, r = t._self._c || n;
+  var t = this, e = t.$createElement, r = t._self._c || e;
   return r("div", {
     ref: "root",
     staticClass: "progress-icon"
@@ -11,31 +12,31 @@ var g = function() {
     style: t.style
   }, [t._t("default")], 2)]);
 }, v = [];
-function y(s, t, n, r, a, l, c, f) {
-  var e = typeof s == "function" ? s.options : s;
-  t && (e.render = t, e.staticRenderFns = n, e._compiled = !0), r && (e.functional = !0), l && (e._scopeId = "data-v-" + l);
+function y(t, e, r, n, a, l, c, f) {
+  var s = typeof t == "function" ? t.options : t;
+  e && (s.render = e, s.staticRenderFns = r, s._compiled = !0), n && (s.functional = !0), l && (s._scopeId = "data-v-" + l);
   var i;
   if (c ? (i = function(o) {
     o = o || this.$vnode && this.$vnode.ssrContext || this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext, !o && typeof __VUE_SSR_CONTEXT__ < "u" && (o = __VUE_SSR_CONTEXT__), a && a.call(this, o), o && o._registeredComponents && o._registeredComponents.add(c);
-  }, e._ssrRegister = i) : a && (i = f ? function() {
+  }, s._ssrRegister = i) : a && (i = f ? function() {
     a.call(
       this,
-      (e.functional ? this.parent : this).$root.$options.shadowRoot
+      (s.functional ? this.parent : this).$root.$options.shadowRoot
     );
   } : a), i)
-    if (e.functional) {
-      e._injectStyles = i;
-      var u = e.render;
-      e.render = function(d, p) {
+    if (s.functional) {
+      s._injectStyles = i;
+      var u = s.render;
+      s.render = function(d, p) {
         return i.call(p), u(d, p);
       };
     } else {
-      var h = e.beforeCreate;
-      e.beforeCreate = h ? [].concat(h, i) : [i];
+      var h = s.beforeCreate;
+      s.beforeCreate = h ? [].concat(h, i) : [i];
     }
   return {
-    exports: s,
-    options: e
+    exports: t,
+    options: s
   };
 }
 const m = {
@@ -80,18 +81,18 @@ const m = {
   },
   computed: {
     clipRect() {
-      const s = this.measureSlotContent(this.progress);
-      if (!s)
+      const t = this.measureSlotContent(this.progress);
+      if (!t)
         return "inherit";
-      this.adjustRoot(s);
-      const { height: t, width: n } = s, r = t * this.vscale, a = n * this.hscale, l = (t - r) / 2, c = (n - a) / 2, f = this.direction;
-      let e = this.progress;
+      this.adjustRoot(t);
+      const { height: e, width: r } = t, n = e * this.vscale, a = r * this.hscale, l = (e - n) / 2, c = (r - a) / 2, f = this.direction;
+      let s = this.progress;
       if (this.steps) {
         const d = 100 / this.steps;
-        e = Math.ceil(e / d) * d;
+        s = Math.ceil(s / d) * d;
       }
-      const i = this.hoffset, u = this.voffset, h = f === "vertical" ? r * e / 100 : r, o = f === "horizontal" ? a * e / 100 : a;
-      return `rect(${r - h + l + u}px,${o + c + i}px,${r + u + l}px,${i + c}px)`;
+      const i = this.hoffset, u = this.voffset, h = f === "vertical" ? n * s / 100 : n, o = f === "horizontal" ? a * s / 100 : a;
+      return `rect(${n - h + l + u}px,${o + c + i}px,${n + u + l}px,${i + c}px)`;
     },
     style() {
       return { ...this.clipStyle, ...this.debugStyle };
@@ -111,19 +112,19 @@ const m = {
   },
   methods: {
     measureSlotContent() {
-      const s = this.$refs.measureContainer, t = s && s.firstChild;
-      if (!!t)
+      const t = this.$refs.measureContainer, e = t && t.firstChild;
+      if (!!e)
         return {
-          height: t.clientHeight,
-          width: t.clientWidth
+          height: e.clientHeight,
+          width: e.clientWidth
         };
     },
-    adjustRoot(s) {
-      const t = this.$refs.root;
-      if (!t || !s)
+    adjustRoot(t) {
+      const e = this.$refs.root;
+      if (!e || !t)
         return;
-      const { height: n, width: r } = s;
-      t.clientHeight !== n && (t.style.height = n + "px"), t.clientWidth !== r && (t.style.width = r + "px");
+      const { height: r, width: n } = t;
+      e.clientHeight !== r && (e.style.height = r + "px"), e.clientWidth !== n && (e.style.width = n + "px");
     }
   }
 }, _ = {};
@@ -137,9 +138,9 @@ var C = /* @__PURE__ */ y(
   null,
   null
 );
-function b(s) {
-  for (let t in _)
-    this[t] = _[t];
+function b(t) {
+  for (let e in _)
+    this[e] = _[e];
 }
 const $ = /* @__PURE__ */ function() {
   return C.exports;
