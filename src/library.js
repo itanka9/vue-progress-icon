@@ -1,1 +1,3 @@
-export ProgressIcon from "@/components/ProgressIcon";
+import ProgressIcon from "./components/ProgressIcon.vue";
+
+module.exports = { ProgressIcon }
