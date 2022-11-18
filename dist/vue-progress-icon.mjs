@@ -1,4 +1,4 @@
-(function(){"use strict";try{if(typeof document!="undefined"){var e=document.createElement("style");e.appendChild(document.createTextNode(".progress-icon[data-v-2b7d77c5]{position:relative;display:inline-block}.progress-icon .fg[data-v-2b7d77c5],.progress-icon .bg[data-v-2b7d77c5]{position:absolute;top:0;left:0}.progress-icon .fg[data-v-2b7d77c5]{z-index:2}.progress-icon .bg[data-v-2b7d77c5]{z-index:1}")),document.head.appendChild(e)}}catch(o){console.error("vite-plugin-css-injected-by-js",o)}})();
+(function(){"use strict";try{if(typeof document!="undefined"){var e=document.createElement("style");e.appendChild(document.createTextNode(".progress-icon[data-v-37462ffe]{position:relative;display:inline-block}.progress-icon .fg[data-v-37462ffe],.progress-icon .bg[data-v-37462ffe]{position:absolute;top:0;left:0}.progress-icon .fg[data-v-37462ffe]{z-index:2}.progress-icon .bg[data-v-37462ffe]{z-index:1}")),document.head.appendChild(e)}}catch(o){console.error("vite-plugin-css-injected-by-js",o)}})();
 var g = function() {
   var t = this, e = t.$createElement, r = t._self._c || e;
   return r("div", {
@@ -134,7 +134,7 @@ var C = /* @__PURE__ */ y(
   v,
   !1,
   b,
-  "2b7d77c5",
+  "37462ffe",
   null,
   null
 );
@@ -144,5 +144,7 @@ function b(t) {
 }
 const $ = /* @__PURE__ */ function() {
   return C.exports;
-}();
-module.exports = { ProgressIcon: $ };
+}(), S = { ProgressIcon: $ };
+export {
+  S as default
+};

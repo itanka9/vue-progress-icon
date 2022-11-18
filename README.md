@@ -10,22 +10,20 @@ Easy progress display with clipping overlay and material/fa icons.
 npm i https://github.com/itanka9/vue-progress-icon.git
 ```
 
-# Usage 
+# Usage
 
 ```vue
 <script>
-import { ProgressIcon } from 'vue-progress-icon'
+import { ProgressIcon } from "vue-progress-icon";
 
 export default {
-    components: { ProgressIcon }
-}
+  components: { ProgressIcon },
+};
 </script>
 
 <template>
-    <progress-icon
-        :progress="42"
-    >
-        <i class="fas fa-battery-full" />
-    </progress-icon>
+  <progress-icon :progress="42">
+    <i class="fas fa-battery-full" />
+  </progress-icon>
 </template>
 ```

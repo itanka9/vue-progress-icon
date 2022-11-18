@@ -11,8 +11,8 @@ export default {
   name: "app",
 
   components: {
-    Demo
-  }
+    Demo,
+  },
 };
 </script>
 
